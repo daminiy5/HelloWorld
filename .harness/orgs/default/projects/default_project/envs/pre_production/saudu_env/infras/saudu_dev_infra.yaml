@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: saudu_dev_infra
+  identifier: saudu_dev_infra
+  orgIdentifier: default
+  projectIdentifier: default_project
+  environmentRef: saudu_env
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: kubernetesdelegate8466b558cfqtgbn
+    namespace: devsaudu
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
