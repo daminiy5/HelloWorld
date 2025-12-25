@@ -1,0 +1,9 @@
+service:
+  name: deploy_service_dev_SD
+  identifier: deploy_service_dev_SD
+  serviceDefinition:
+    type: Kubernetes
+    spec: {}
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: default_project
