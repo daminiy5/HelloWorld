@@ -24,7 +24,7 @@ To compile the "Hello World" program, type the following:
 javac HelloWorld.java
 ```
 
-## Excute the program
+## Excute the program harness
 
 To execute the program, type this:
 
