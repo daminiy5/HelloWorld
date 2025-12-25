@@ -1,0 +1,44 @@
+pipeline:
+  name: chinmay
+  identifier: chinmay
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: test
+        repoName: HelloWorld
+        build: <+input>
+  stages:
+    - stage:
+        name: chinmaybuild
+        identifier: chinmaybuild
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: kubernetesdelegate8466b558cfqtgbn
+              namespace: default
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: https://us-docker.pkg.dev/gar-prod-setup/harness-public
+                    shell: Sh
+                    command: javac HelloWorld.java
