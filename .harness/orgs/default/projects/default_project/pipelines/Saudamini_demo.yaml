@@ -1,0 +1,73 @@
+pipeline:
+  name: Saudamini_demo
+  identifier: Saudamini_demo
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: approve
+        identifier: approve
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: approvepipeline
+                  identifier: approvepipeline
+                  type: HarnessApproval
+                  timeout: 1d
+                  spec:
+                    approvalMessage: |-
+                      Please review the following information
+                      and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups:
+                        - saudamini
+                    isAutoRejectEnabled: false
+                    approverInputs: []
+        tags:
+          QA: ""
+        when:
+          pipelineStatus: Success
+    - stage:
+        name: build_saudamini
+        identifier: build_saudamini
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: kubernetesdelegate8466b558cfqtgbn
+              namespace: default
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: chinmaydocker
+                    repo: daminiy5
+                    tags:
+                      - latest
+  properties:
+    ci:
+      codebase:
+        connectorRef: test
+        repoName: HelloWorld
+        build: <+input>
