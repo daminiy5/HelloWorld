@@ -1,0 +1,14 @@
+inputSet:
+  name: trigger_input_SD
+  identifier: trigger_input_SD
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Saudamini_demo
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: dev
