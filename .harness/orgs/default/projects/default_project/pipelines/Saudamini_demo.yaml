@@ -62,9 +62,9 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: saudu_docker
-                    repo: saudu_docker_harness
+                    repo: docker.io/daminiy5/saudu_docker_harness
                     tags:
-                      - latest
+                      - docker.io/daminiy5/saudu_docker_harness:latest
                     dockerfile: .harness/orgs/default/projects/default_project/pipelines/Dockerfile
   properties:
     ci:
