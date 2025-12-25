@@ -38,9 +38,9 @@ pipeline:
                   name: Run_1
                   identifier: Run_1
                   spec:
-                    connectorRef: account.harnessImage
-                    image: openjdk:17-slim
+                    connectorRef: chinmaydocker
+                    image: eclipse-temurin:17-jdk
                     shell: Sh
-                    command: |
+                    command: |-
                       javac HelloWorld.java
                       java HelloWorld
