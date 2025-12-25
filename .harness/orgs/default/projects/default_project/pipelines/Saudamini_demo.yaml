@@ -65,6 +65,7 @@ pipeline:
                     repo: saudu_docker_harness
                     tags:
                       - latest
+                    dockerfile: .harness/orgs/default/projects/default_project/pipelines/Dockerfile
   properties:
     ci:
       codebase:
