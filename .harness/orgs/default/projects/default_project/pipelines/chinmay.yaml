@@ -39,6 +39,8 @@ pipeline:
                   identifier: Run_1
                   spec:
                     connectorRef: account.harnessImage
-                    image: https://us-docker.pkg.dev/gar-prod-setup/harness-public
+                    image: us-docker.pkg.dev/gar-prod-setup/harness-public/openjdk:17-latest
                     shell: Sh
-                    command: javac HelloWorld.java
+                    command: |
+                      javac HelloWorld.java
+                      java HelloWorld
