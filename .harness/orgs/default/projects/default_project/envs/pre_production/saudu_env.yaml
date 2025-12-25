@@ -1,0 +1,8 @@
+environment:
+  name: saudu_env
+  identifier: saudu_env
+  description: ""
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: default_project
