@@ -1,0 +1,14 @@
+inputSet:
+  name: trigger_saudu
+  identifier: trigger_saudu
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Saudamini_demo
+    properties:
+      ci:
+        codebase:
+          build:
+            type: tag
+            spec:
+              tag: saudu
