@@ -8,7 +8,7 @@ service:
         type: Git
         spec:
           connectorRef: test
-          repoName: HellowWorld
+          repoName: HelloWorld
           branch: dev
           paths:
             - k8s/deployment.yaml
@@ -24,7 +24,7 @@ service:
                   gitFetchType: Branch
                   paths:
                     - https://github.com/daminiy5/HelloWorld/blob/dev/k8s/deployment.yaml
-                  repoName: HellowWorld
+                  repoName: HelloWorld
                   branch: dev
               skipResourceVersioning: false
               enableDeclarativeRollback: false
