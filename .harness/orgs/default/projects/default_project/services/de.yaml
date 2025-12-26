@@ -24,7 +24,7 @@ service:
                   gitFetchType: Branch
                   paths:
                     - https://github.com/daminiy5/HelloWorld/blob/dev/k8s/deployment.yaml
-                  repoName: HelloWorld
+                  repoName: https://github.com/daminiy5/HelloWorld
                   branch: dev
               skipResourceVersioning: false
               enableDeclarativeRollback: false
