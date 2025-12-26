@@ -7,7 +7,7 @@ service:
       store:
         type: Git
         spec:
-          connectorRef: account.GitConnector
+          connectorRef: test
           repoName: HellowWorld
           branch: dev
           paths:
