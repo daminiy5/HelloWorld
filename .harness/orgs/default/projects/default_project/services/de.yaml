@@ -3,7 +3,15 @@ service:
   identifier: deploy_service_dev_SD
   serviceDefinition:
     type: Kubernetes
-    spec: {}
+    spec:
+      store:
+        type: Git
+        spec:
+          connectorRef: account.GitConnector
+          repoName: my-repo
+          branch: main
+          paths:
+          - k8s/deployment.yaml
   gitOpsEnabled: false
   orgIdentifier: default
   projectIdentifier: default_project
