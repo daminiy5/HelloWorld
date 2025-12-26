@@ -8,8 +8,8 @@ service:
         type: Git
         spec:
           connectorRef: account.GitConnector
-          repoName: my-repo
-          branch: main
+          repoName: HellowWorld
+          branch: dev
           paths:
           - k8s/deployment.yaml
   gitOpsEnabled: false
