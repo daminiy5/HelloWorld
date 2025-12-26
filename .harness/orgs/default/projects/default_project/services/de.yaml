@@ -11,7 +11,24 @@ service:
           repoName: HellowWorld
           branch: dev
           paths:
-          - k8s/deployment.yaml
+            - k8s/deployment.yaml
+      manifests:
+        - manifest:
+            identifier: hellodeploymentmanifest
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: test
+                  gitFetchType: Branch
+                  paths:
+                    - https://github.com/daminiy5/HelloWorld/blob/dev/k8s
+                  repoName: HelloWorld
+                  branch: dev
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              optionalValuesYaml: false
   gitOpsEnabled: false
   orgIdentifier: default
   projectIdentifier: default_project
