@@ -23,7 +23,7 @@ service:
                   connectorRef: test
                   gitFetchType: Branch
                   paths:
-                    - https://github.com/daminiy5/HelloWorld/blob/dev/k8s
+                    - https://github.com/daminiy5/HelloWorld/blob/dev/k8s/deployment.yaml
                   repoName: HelloWorld
                   branch: dev
               skipResourceVersioning: false
